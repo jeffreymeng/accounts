@@ -16,7 +16,18 @@
 
     <!-- Custom CSS -->
     <style>
-    
+        #login-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            width: 100px;
+            height: 100px;
+            background-color:#E7E5DF;
+            box-shadow: 0 0 1em /*color here optional*/;
+
+        }
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -30,13 +41,13 @@
 
 <body>
 
-    
+
 
     <!-- Page Content -->
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-6 text-center">
+            <div class="col-lg-6 text-center" id="login-box">
                 <h1>Jeffrey Accounts</h1>
                 <p class="lead">Complete with pre-defined file paths that you won't have to change!!</p>
                 <label for="email">Email address:</label>
