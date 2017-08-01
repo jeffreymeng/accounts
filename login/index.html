@@ -20,21 +20,23 @@
             display: none;
         }
         
-        #login-box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -275px;
-            margin-left: -200px;
-            width: 400px;
-            height: 550px;
-            background-color: #FBFAFA;
-            box-shadow: 0 0 0.35em black;
-        }
-        
         hr {
             color: #E5E4E4;
             background-color: #E5E4E4;
+        }
+        
+        @media (min-height: 650px) and (min-width: 500px) {
+            #login-box {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -275px;
+                margin-left: -200px;
+                width: 400px;
+                height: 550px;
+                background-color: #FBFAFA;
+                box-shadow: 0 0 0.35em black;
+            }
         }
     </style>
 
@@ -55,13 +57,14 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-6 text-center" id="login-box">
+            <div class="text-center" id="login-box">
                 <br>
                 <br>
                 <br>
-                
+
                 <p class="redirect-text">Login to</p>
-                <h1>Jeffrey Accounts<!--<span style="color:#DB6C39">Accounts</span>--></h1>
+                <h1>Jeffrey Accounts
+                    <!--<span style="color:#DB6C39">Accounts</span>--></h1>
                 <p class="redirect-text">to continue to:</p>
                 <p class="lead redirect-text">Technostorms Scheduler</p>
 
@@ -102,7 +105,7 @@
         firebase.initializeApp(config);
     </script>
     <script>
-    firebase.auth()
+        firebase.auth()
     </script>
 
 </body>
