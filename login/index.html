@@ -16,6 +16,9 @@
 
     <!-- Custom CSS -->
     <style>
+        .hidden {
+            display:none;
+        }
         #login-box {
             position: absolute;
             top: 50%;
@@ -48,8 +51,11 @@
 
         <div class="row">
             <div class="col-lg-6 text-center" id="login-box">
+                <b class="redirect-text">Login to</b>
                 <h1>Jeffrey Accounts</h1>
-                <p class="lead">Complete with pre-defined file paths that you won't have to change!!</p>
+                <b class="redirect-text">to continue to:</b>
+                <p class="lead redirect-text">One account for all your jeffrey services</p>
+                <hr>
                 <label for="email">Email address:</label>
                 <input type="text" id="email" class="form-control">
                 <label for="password">Password:</label>
@@ -69,7 +75,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
-
+    <script>
+        
+    </script>
 </body>
 
 </html>
