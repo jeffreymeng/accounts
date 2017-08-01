@@ -26,7 +26,7 @@
         }
         
         @media (min-height: 650px) and (min-width: 500px) {
-            #login-box {
+            #login-box-outer {
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -36,6 +36,9 @@
                 height: 550px;
                 background-color: #FBFAFA;
                 box-shadow: 0 0 0.35em black;
+            }
+            #login-box-inner {
+                margin: 25px;
             }
         }
     </style>
@@ -57,27 +60,29 @@
     <div class="container">
 
         <div class="row">
-            <div class="text-center" id="login-box">
-                <br>
-                <br>
-                <br>
+            <div class="text-center" id="login-box-outer">
+                <div class="text-center" id="login-box-inner">
+                    <br>
+                    <br>
+                    <br>
 
-                <p class="redirect-text">Login to</p>
-                <h1>Jeffrey Accounts
-                    <!--<span style="color:#DB6C39">Accounts</span>--></h1>
-                <p class="redirect-text">to continue to:</p>
-                <p class="lead redirect-text">Technostorms Scheduler</p>
+                    <p class="redirect-text">Login to</p>
+                    <h1>Jeffrey Accounts
+                        <!--<span style="color:#DB6C39">Accounts</span>--></h1>
+                    <p class="redirect-text">to continue to:</p>
+                    <p class="lead redirect-text">Technostorms Scheduler</p>
 
-                <hr>
-                <label for="email">Email address:</label>
-                <input type="text" id="email" class="form-control">
-                <label for="password">Password:</label>
-                <input type="password" id="password" class="form-control">
-                <br>
-                <br>
-                <button class="btn btn-primary form-control">Login</button>
-                <hr>
-                <p><a>Create an account</a> | <a>Reset your password</a> | <a>More Info</a></p>
+                    <hr>
+                    <label for="email">Email address:</label>
+                    <input type="text" id="email" class="form-control">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" class="form-control">
+                    <br>
+                    <br>
+                    <button class="btn btn-primary form-control">Login</button>
+                    <hr>
+                    <p><a>Create an account</a> | <a>Reset your password</a> | <a>More Info</a></p>
+                </div>
             </div>
         </div>
         <!-- /.row -->
