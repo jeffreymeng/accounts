@@ -17,8 +17,9 @@
     <!-- Custom CSS -->
     <style>
         .hidden {
-            display:none;
+            display: none;
         }
+        
         #login-box {
             position: absolute;
             top: 50%;
@@ -27,13 +28,14 @@
             margin-left: -200px;
             width: 400px;
             height: 550px;
-            background-color:#FBFAFA;
-            box-shadow: 0 0 0.35em /*color here optional*/;
-
+            background-color: #FBFAFA;
+            box-shadow: 0 0 0.35em/*color here optional*/
+            ;
         }
+        
         hr {
-            color:#E5E4E4;
-            background-color:#E5E4E4;
+            color: #E5E4E4;
+            background-color: #E5E4E4;
         }
     </style>
 
@@ -58,11 +60,12 @@
                 <br>
                 <br>
                 <br>
-                <br>
+                
                 <p class="redirect-text">Login to</p>
                 <h1>Jeffrey Accounts</h1>
                 <p class="redirect-text">to continue to:</p>
-                <p class="lead redirect-text">One account for all your jeffrey services</p>
+                <p class="lead redirect-text">Technostorms Scheduler</p>
+
                 <hr>
                 <label for="email">Email address:</label>
                 <input type="text" id="email" class="form-control">
@@ -83,9 +86,24 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
     <script>
-        
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBfiN9ugdeAJ3y-PgdFMmPS5Ekonw1tviw",
+            authDomain: "jauthentication.firebaseapp.com",
+            databaseURL: "https://jauthentication.firebaseio.com",
+            projectId: "jauthentication",
+            storageBucket: "",
+            messagingSenderId: "337906616596"
+        };
+        firebase.initializeApp(config);
     </script>
+    <script>
+    firebase.auth()
+    </script>
+
 </body>
 
 </html>
