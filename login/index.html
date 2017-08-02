@@ -80,8 +80,13 @@
                     <input type="password" id="password" class="form-control">
                     <br>
                     <br>
-                    <button class="btn btn-primary form-control">Login</button>
+                    <button class="btn btn-primary form-control" id="login-btn">Login</button>
+                    <p class="text-danger">Password incorrect</p>
                     <hr>
+                    <div>
+                        <button class="btn btn-danger form-control" id="return-btn">Cancel and return</button>
+                        <hr>
+                    </div>
                     <p><a>Create an account</a> | <a>Reset your password</a> | <a>More Info</a></p>
                 </div>
             </div>
@@ -99,6 +104,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
     <script>
+        /*global firebase*/
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyBfiN9ugdeAJ3y-PgdFMmPS5Ekonw1tviw",
@@ -111,7 +117,56 @@
         firebase.initializeApp(config);
     </script>
     <script>
-        firebase.auth()
+        /*global firebase*/
+
+        //http://stackoverflow.com/a/901144/5511561
+        function getQuery(name) {
+            var url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        function generateRand(count, chars) {
+            var text, possible = chars || "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            for (var i = 0; i < count; i++)
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+            return text;
+        }
+        // sample link: accounts.jeffkmeng.com/login/?cancel=URIENCODEDCANCELRURL&referrer=REFERRERID&continue=CONTINUEURL&scopes=SCOPE1,SCOPE2
+        $("#return-btn").click(function(){
+            window.location.href = decodeURIComponent(getQuery(cancel));
+        })
+        $("#login-btn").click(function() {
+            firebase.auth().signInWithEmailAndPassword($("#email").val(), $("password").val()).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
+            }).then(function() {
+                firebase.auth().onAuthStateChanged(function(user) {
+                    if (user) {
+                        // add token
+                        var push = {};
+                        push["t" + generateRand(25)] = {
+                            created: (new Date.getTime()),
+                            uid: user.uid
+                        };
+                        console.log(push);
+                        firebase.database.ref("/users/" + user.uid + "/tokens/").set(push);
+                        firebase.database.ref("/users/" + user.uid + "/scopes/")
+                    }
+                    else {
+                        // Error
+                    }
+                });
+            });
+        });
     </script>
 
 </body>
