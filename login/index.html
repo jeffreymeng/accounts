@@ -13,11 +13,15 @@
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .center {
-            margin: auto;
-            width: 50%;
-            border: 3px solid green;
-            padding: 10px;
+        body {
+            position: relative;
+        }
+
+        #body-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 
@@ -25,7 +29,7 @@
 
 <body>
 
-    <div class="card center">
+    <div class="card body-box" id="body-box">
         <h4 class="card-header">Featured</h4>
         <div class="card-body">
             <h4 class="card-title">Special title treatment</h4>
