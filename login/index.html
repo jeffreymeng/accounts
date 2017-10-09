@@ -28,6 +28,13 @@
             height: 550px;
             background-color: #FBFAFA;
         }
+        /*invisible: Takes up space, dont see anything. hidden: takes up no space*/
+        .invisible {
+            visibility:hidden;
+        }
+        .hidden {
+            display:none;
+        }
     </style>
 
 </head>
@@ -41,14 +48,15 @@
             <input class="form-control" id="email" type="text">
             <label for="password">Password:</label>
             <input class="form-control" id="password" type="password">
-            <p class="text-danger">Email/Password Incorrect. Try again.</p>
-            <p class="text-danger">Sorry, there's an error on our side. Please try again later.</p>
-            <br>
+            <p class="text-danger invisible">Email/Password Incorrect. Try again.</p>
+            <p class="text-danger hidden">Sorry, there's an error on our side. Please try again later.</p>
             <a href="/scopes" class="btn btn-primary form-control">Login</a>
             <hr>
-            <a href="/scopes" class="btn btn-primary form-control">Cancel and return to <span>Techedit</span></a>
             <hr>
-            <p></p>
+            <a href="/scopes" class="btn btn-danger form-control">Cancel and return to <span>Techedit</span></a>
+            <hr>
+            
+            <p><a href="/account/create">Create Account</a> | <a href="/account/create">Reset Password</a></p>
         </div>
     </div>
 
