@@ -68,19 +68,23 @@
 
         /*FIX*/
 
-        @media screen and (max-height:625px) and (min-width:550px) {
-            #moible-box {
+        @media screen and (max-height:625px) and (min-width:600px) {
+            #moible-box,#create-box {
                 padding-left: 20%;
                 padding-right: 20%;
             }
+            
         }
+
         #d-google-btn,
         #d-github-btn,
         #m-google-btn,
         #m-github-btn,
-        #cancel
-        {
+        #cancel {
             color: white;
+        }
+        #create-box {
+            padding-top:75px;
         }
     </style>
 
@@ -102,14 +106,14 @@
             <a class="btn btn-block btn-social btn-google" id="d-google-btn">
     <i class="fab fa-google"></i> Sign in with Google
   </a>
-            <a class="btn btn-block btn-social btn-github"id="d-github-btn">
+            <a class="btn btn-block btn-social btn-github" id="d-github-btn">
     <i class="fab fa-github"></i> Sign in with Github
   </a>
             <hr>
-            <a href="/scopes" class="btn btn-danger form-control">Cancel and return to <span>Techedit</span></a>
+            <a class=" cancelbtn btn-danger form-control">Cancel and return to <span class="return-name">Techedit</span></a>
             <hr>
 
-            <p><a href="/account/create">Create Account</a> | <a href="/account/create">Reset Password</a></p>
+            <p><a href="/account/create" class="create-account">Create Account</a> | <a href="/account/create">Reset Password</a></p>
         </div>
     </div>
     <div class="moible-box col-sm-12" id="moible-box">
@@ -123,35 +127,49 @@
         <p class="text-danger hidden">Sorry, there's an error on our side. Please try again later.</p>
         <a href="/scopes" class="btn btn-primary form-control">Login</a>
         <hr>
-        <a class="btn btn-block btn-social btn-google"id="m-google-btn">
+        <a class="btn btn-block btn-social btn-google" id="m-google-btn">
     <span class="fab fa-google"></span> Sign in with Google
   </a>
-        <a class="btn btn-block btn-social btn-github"id="m-github-btn">
+        <a class="btn btn-block btn-social btn-github" id="m-github-btn">
     <span class="fab fa-github"></span> Sign in with Github
   </a>
         <hr>
-        <a class="btn btn-danger form-control" id="cancel">Cancel and return to <span>Techedit</span></a>
+        <a class="btn btn-danger form-control cancel">Cancel and return to <span class="return-name">Techedit</span></a>
         <hr>
 
-        <p><a href="/account/create">Create Account</a> | <a href="/account/create">Reset Password</a></p>
+        <p><a href="/account/create" class="create-account">Create Account</a> | <a href="/account/create">Reset Password</a></p>
     </div>
+    <div class="create-box col-sm-12" id="create-box">
+        <h3>Create a Jeffrey Account</h3>
+        <p>
+            Jeffrey accounts are simple, fast, and elegant. It's how accounts were made to be.
+        </p>
+        
+        <hr>
+        
+        <a class="btn btn-primary form-control" id="new-account">Open new tab to create account</a>
+        <hr>
+
+        <hr>
+        <a class="btn btn-danger form-control" id="cancel">Go back to login</a>
+
     </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/js/jquery.min.js"></script>
-<script>
-    $("#cancel").click(function(){
-        opener.openerHandler.cancelRequest()
-    });
-    (function(){
-        var handler = {};
-        handler.redirect = function (url) {
-            window.location.href = url;
-        };
-        window.popupHandler = handler;
-    })();
-    
-</script>
+    <script>
+        $(".cancel").click(function() {
+            opener.openerHandler.cancelRequest()
+        });
+        
+        (function() {
+            var handler = {};
+            handler.redirect = function(url) {
+                window.location.href = url;
+            };
+            window.popupHandler = handler;
+        })();
+    </script>
 </body>
 
 </html>
