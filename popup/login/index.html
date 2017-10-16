@@ -139,7 +139,7 @@
 
         <p><a href="/account/create" class="create-account">Create Account</a> | <a href="/account/create">Reset Password</a></p>
     </div>
-    <div class="create-box col-sm-12" id="create-box">
+    <div class="hidden col-sm-12" id="create-box">
         <h3>Create a Jeffrey Account</h3>
         <p>
             Jeffrey accounts are simple, fast, and elegant. It's how accounts were made to be.
@@ -163,6 +163,8 @@
             opener.openerHandler.cancelRequest();
         });
         $(".create-account").click(function(){
+            $("#body-box, #moible-box").addClass("hidden");
+            $("#create-box").removeClass("hidden");
             $("#new-account-final").click(function(){
                 opener.openerHandler.create();
             })
