@@ -159,8 +159,11 @@
     <script src="/js/jquery.min.js"></script>
     <script>
         $(".cancel").click(function() {
-            opener.openerHandler.cancelRequest()
+            opener.openerHandler.cancelRequest();
         });
+        $(".create-account").click(function(){
+            opener.openerHandler.create();
+        })
         
         (function() {
             var handler = {};
