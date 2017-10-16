@@ -147,7 +147,8 @@
         
         <hr>
         
-        <a class="btn btn-primary form-control" id="new-account">Open new tab to create account</a>
+        <a class="btn btn-primary form-control" id="new-account-final">Open new tab to create account</a>
+        <p>While you create your account, this window will hide. Once you're done creating your account, this window will reappear for you to </p>
         <hr>
 
         <hr>
@@ -162,7 +163,9 @@
             opener.openerHandler.cancelRequest();
         });
         $(".create-account").click(function(){
-            opener.openerHandler.create();
+            $("#new-account-final").click(function(){
+                opener.openerHandler.create();
+            })
         })
         
         (function() {
