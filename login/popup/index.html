@@ -143,10 +143,11 @@
         opener.openFn.cancelRequest()
     });
     (function(){
-        var popupHandler = {};
-        popupHandler.redirect = function (url) {
+        var handler = {};
+        handler.redirect = function (url) {
             window.location.href = url;
         };
+        window.popupHandler = handler;
     })();
     
 </script>
