@@ -2,12 +2,12 @@
 <script>
 var parent;
     (function(){
-        var handler = {}
+        var handler = {};
         handler.cancelRequest = function(){
             parent.close();
-        }
+        };
         window.openerHandler = handler;
-    })()
+    })();
     function addEventListener(el, eventName, handler) {
   if (el.addEventListener) {
     el.addEventListener(eventName, handler);

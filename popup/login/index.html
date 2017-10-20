@@ -92,7 +92,7 @@
 
 <body>
 
-    <div class="card body-box" id="body-box">
+    <div class="card body-box li-container" id="body-box">
         <h4 class="card-header">Login with Jeffrey Accounts</h4>
         <div class="card-body">
             <label for="email">Email:</label>
@@ -116,7 +116,7 @@
             <p><a class="create-account">Create Account</a> | <a href="/account/create">Reset Password</a></p>
         </div>
     </div>
-    <div class="moible-box col-sm-12" id="moible-box">
+    <div class="moible-box col-sm-12 li-container" id="moible-box">
         <h3>Login with Jeffrey Accounts</h3>
         <hr>
         <label for="email">Email:</label>
@@ -162,12 +162,12 @@
         $(".cancel").click(function() {
             opener.openerHandler.cancelRequest();
         });
-        $(".create-account").click(function(){
-            $("#body-box, #moible-box").addClass("hidden");
+        $(".create-account").live("click", function(){
+            $(".li-container").addClass("hidden");
             $("#create-box").removeClass("hidden");
             $("#new-account-final").click(function(){
                 opener.openerHandler.create();
-            })
+            });
         })
         
         (function() {
