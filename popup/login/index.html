@@ -1,183 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+	<meta content="" name="description">
+	<meta content="" name="author">
+	<title>Jeffrey Accounts</title><!-- Bootstrap core CSS -->
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/social.css" rel="stylesheet">
+	<link href="/font-awesome/css/fontawesome-pro-core.css" rel="stylesheet">
+	<link href="/font-awesome/css/fontawesome-pro-brands.css" rel="stylesheet">
+	<style>
+	       body {
+	           background-color: #fcfcfc;
+	       }
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	       .body-box {
+	           position: absolute;
+	           margin: auto;
+	           top: 0;
+	           right: 0;
+	           bottom: 0;
+	           left: 0;
+	           width: 425px;
+	           height: 550px;
+	           background-color: #FBFAFA;
+	       }
 
-    <title>Jeffrey Accounts</title>
+	       /*invisible: Takes up space, dont see anything. hidden: takes up no space*/
 
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/social.css" rel="stylesheet">
-    <link href="/font-awesome/css/fontawesome-pro-core.css" rel="stylesheet">
-    <link href="/font-awesome/css/fontawesome-pro-brands.css" rel="stylesheet">
+	       .invisible {
+	           visibility: hidden;
+	       }
 
-    <style>
-        body {
-            background-color: #fcfcfc;
-        }
+	       .hidden {
+	           display: none;
+	       }
 
-        .body-box {
-            position: absolute;
-            margin: auto;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            width: 425px;
-            height: 550px;
-            background-color: #FBFAFA;
-        }
+	       .btn-github .btn.google {
+	           color: white;
+	       }
 
-        /*invisible: Takes up space, dont see anything. hidden: takes up no space*/
+	       #moible-box {
+	           display: none;
+	       }
 
-        .invisible {
-            visibility: hidden;
-        }
+	       #body-box {
+	           display: block;
+	       }
 
-        .hidden {
-            display: none;
-        }
+	       @media screen and (max-width: 500px),
+	       screen and (max-height:625px) {
+	           #body-box {
+	               display: none;
+	           }
+	           #moible-box {
+	               padding-top: 20px;
+	               display: block;
+	           }
+	       }
 
-        .btn-github .btn.google {
-            color: white;
-        }
+	       /*FIX*/
 
-        #moible-box {
-            display: none;
-        }
+	       @media screen and (max-height:625px) and (min-width:600px) {
+	           #moible-box,
+	           #create-box {
+	               padding-left: 20%;
+	               padding-right: 20%;
+	           }
 
-        #body-box {
-            display: block;
-        }
+	       }
 
-        @media screen and (max-width: 500px),
-        screen and (max-height:625px) {
-            #body-box {
-                display: none;
-            }
-            #moible-box {
-                padding-top: 20px;
-                display: block;
-            }
-        }
+	       #d-google-btn,
+	       #d-github-btn,
+	       #m-google-btn,
+	       #m-github-btn,
+	       #cancel,
+	       .cancel,
+	       #new-account-final {
+	           color: white;
+	       }
 
-        /*FIX*/
-
-        @media screen and (max-height:625px) and (min-width:600px) {
-            #moible-box,#create-box {
-                padding-left: 20%;
-                padding-right: 20%;
-            }
-            
-        }
-
-        #d-google-btn,
-        #d-github-btn,
-        #m-google-btn,
-        #m-github-btn,
-        #cancel {
-            color: white;
-        }
-        #create-box {
-            padding-top:75px;
-        }
-    </style>
-
+	       #create-box {
+	           padding-top: 75px;
+	       }
+	</style>
 </head>
-
 <body>
+	<div class="card body-box li-container" id="body-box">
+		<h4 class="card-header">Login with Jeffrey Accounts</h4>
+		<div class="card-body">
+			<label for="email">Email:</label> <input class="form-control" id="email" type="text"> <label for="password">Password:</label> <input class="form-control" id="password" type="password">
+			<p class="text-danger invisible">Email/Password Incorrect. Try again.</p>
+			<p class="text-danger hidden">Sorry, there's an error on our side. Please try again later.</p><a class="btn btn-primary form-control" href="/scopes">Login</a>
+			<hr>
+			<a class="btn btn-block btn-social btn-google" id="d-google-btn"><i class="fab fa-google"></i> Sign in with Google</a> <a class="btn btn-block btn-social btn-github" id="d-github-btn"><i class="fab fa-github"></i> Sign in with Github</a>
+			<hr>
+			<a class="cancel btn btn-danger form-control">Cancel and return to <span class="return-name">Techedit</span></a>
+			<hr>
+			<p><a class="create-account" href="">Create Account</a> | <a href="/account/create">Reset Password</a></p>
+		</div>
+	</div>
+	<div class="moible-box col-sm-12 li-container" id="moible-box">
+		<h3>Login with Jeffrey Accounts</h3>
+		<hr>
+		<label for="email">Email:</label> <input class="form-control" id="email" type="text"> <label for="password">Password:</label> <input class="form-control" id="password" type="password">
+		<p class="text-danger invisible">Email/Password Incorrect. Try again.</p>
+		<p class="text-danger hidden">Sorry, there's an error on our side. Please try again later.</p><a class="btn btn-primary form-control" href="/scopes">Login</a>
+		<hr>
+		<a class="btn btn-block btn-social btn-google" id="m-google-btn"><span class="fab fa-google"></span> Sign in with Google</a> <a class="btn btn-block btn-social btn-github" id="m-github-btn"><span class="fab fa-github"></span> Sign in with Github</a>
+		<hr>
+		<a class="btn btn-danger form-control cancel">Cancel and return to <span class="return-name">Techedit</span></a>
+		<hr>
+		<p><a class="create-account" href="">Create Account</a> | <a href="/account/create">Reset Password</a></p>
+	</div>
+	<div class="hidden col-sm-12" id="create-box">
+		<h3>Create a Jeffrey Account</h3>
+		<p>Jeffrey accounts are simple, fast, and elegant. It's how accounts were made to be.</p>
+		<hr>
+		<a class="btn btn-primary form-control" id="new-account-final">Open new tab to create account</a>
+		<p>While you create your account, this window will hide. Once you're done creating your account, this window will reappear for you to continue logging in.</p>
+		<hr>
+		<hr>
+		<a class="btn btn-danger form-control" id="cancel">Go back to login</a>
+	</div><!-- Bootstrap core JavaScript -->
+	<script src="/js/jquery.min.js">
+	</script> 
+	<script>
+	       $(".cancel").click(function() {
+	           opener.openerHandler.cancelRequest();
+	       });
+	       $(".create-account").click(function() {
+	           $(".li-container").addClass("hidden");
+	           $("#create-box").removeClass("hidden");
+	           $("#new-account-final").click(function() {
+	               opener.openerHandler.create();
+	           });
+	       })
 
-    <div class="card body-box li-container" id="body-box">
-        <h4 class="card-header">Login with Jeffrey Accounts</h4>
-        <div class="card-body">
-            <label for="email">Email:</label>
-            <input class="form-control" id="email" type="text">
-            <label for="password">Password:</label>
-            <input class="form-control" id="password" type="password">
-            <p class="text-danger invisible">Email/Password Incorrect. Try again.</p>
-            <p class="text-danger hidden">Sorry, there's an error on our side. Please try again later.</p>
-            <a href="/scopes" class="btn btn-primary form-control">Login</a>
-            <hr>
-            <a class="btn btn-block btn-social btn-google" id="d-google-btn">
-    <i class="fab fa-google"></i> Sign in with Google
-  </a>
-            <a class="btn btn-block btn-social btn-github" id="d-github-btn">
-    <i class="fab fa-github"></i> Sign in with Github
-  </a>
-            <hr>
-            <a class=" cancelbtn btn-danger form-control">Cancel and return to <span class="return-name">Techedit</span></a>
-            <hr>
-
-            <p><a class="create-account">Create Account</a> | <a href="/account/create">Reset Password</a></p>
-        </div>
-    </div>
-    <div class="moible-box col-sm-12 li-container" id="moible-box">
-        <h3>Login with Jeffrey Accounts</h3>
-        <hr>
-        <label for="email">Email:</label>
-        <input class="form-control" id="email" type="text">
-        <label for="password">Password:</label>
-        <input class="form-control" id="password" type="password">
-        <p class="text-danger invisible">Email/Password Incorrect. Try again.</p>
-        <p class="text-danger hidden">Sorry, there's an error on our side. Please try again later.</p>
-        <a href="/scopes" class="btn btn-primary form-control">Login</a>
-        <hr>
-        <a class="btn btn-block btn-social btn-google" id="m-google-btn">
-    <span class="fab fa-google"></span> Sign in with Google
-  </a>
-        <a class="btn btn-block btn-social btn-github" id="m-github-btn">
-    <span class="fab fa-github"></span> Sign in with Github
-  </a>
-        <hr>
-        <a class="btn btn-danger form-control cancel">Cancel and return to <span class="return-name">Techedit</span></a>
-        <hr>
-
-        <p><a class="create-account">Create Account</a> | <a href="/account/create">Reset Password</a></p>
-    </div>
-    <div class="hidden col-sm-12" id="create-box">
-        <h3>Create a Jeffrey Account</h3>
-        <p>
-            Jeffrey accounts are simple, fast, and elegant. It's how accounts were made to be.
-        </p>
-        
-        <hr>
-        
-        <a class="btn btn-primary form-control" id="new-account-final">Open new tab to create account</a>
-        <p>While you create your account, this window will hide. Once you're done creating your account, this window will reappear for you to </p>
-        <hr>
-
-        <hr>
-        <a class="btn btn-danger form-control" id="cancel">Go back to login</a>
-
-    </div>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="/js/jquery.min.js"></script>
-    <script>
-        $(".cancel").click(function() {
-            opener.openerHandler.cancelRequest();
-        });
-        $(".create-account").click( function(){
-            $(".li-container").addClass("hidden");
-            $("#create-box").removeClass("hidden");
-            $("#new-account-final").click(function(){
-                opener.openerHandler.create();
-            });
-        })
-        
-        (function() {
-            var handler = {};
-            handler.redirect = function(url) {
-                window.location.href = url;
-            };
-            window.popupHandler = handler;
-        })();
-    </script>
+	       (function() {
+	           var handler = {};
+	           handler.redirect = function(url) {
+	               window.location.href = url;
+	           };
+	           window.popupHandler = handler;
+	       })();
+	</script>
 </body>
-
 </html>
