@@ -90,6 +90,7 @@
 		#create-box {
 			padding-top: 75px;
 		}
+
 		.link {
 
 			color: #007bff;
@@ -149,21 +150,21 @@
 	<script src="/js/jquery.min.js">
 	</script>
 	<script>
-	/* global $ opener */
+		/* global $ opener */
 		$(".cancel").each(function() {
-			$(this).click(function(){
+			$(this).click(function() {
 				opener.openerHandler.cancelRequest();
 			});
-			
+
 		});
 		$(".create-account").each(function() {
-			$(this).click(function(){
-				
-			$(".li-container").addClass("hidden");
-			$("#create-box").removeClass("hidden");
-			$("#new-account-final").click(function() {
-				opener.openerHandler.create();
-			});
+			$(this).click(function() {
+
+				$(".li-container").addClass("hidden");
+				$("#create-box").removeClass("hidden");
+				$("#new-account-final").click(function() {
+					opener.openerHandler.create();
+				});
 			});
 		});
 
