@@ -135,16 +135,23 @@
 	<script src="/js/jquery.min.js">
 	</script>
 	<script>
-		$(".cancel").click(function() {
-			opener.openerHandler.cancelRequest();
+	/* global $ opener */
+		$(".cancel").each(function() {
+			$(this).click(function(){
+				opener.openerHandler.cancelRequest();
+			});
+			
 		});
-		$(".create-account").click(function() {
+		$(".create-account").each(function() {
+			$(this).click(function(){
+				
 			$(".li-container").addClass("hidden");
 			$("#create-box").removeClass("hidden");
 			$("#new-account-final").click(function() {
 				opener.openerHandler.create();
 			});
-		})
+			});
+		});
 
 		(function() {
 			var handler = {};
