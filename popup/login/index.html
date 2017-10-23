@@ -160,7 +160,9 @@
 		$(".create-account").each(function() {
 			$(this).click(function() {
 
-				$(".li-container").addClass("hidden");
+				$(".li-container").each(function() {
+					$(this).addClass("hidden");
+				});
 				$("#create-box").removeClass("hidden");
 				$("#new-account-final").click(function() {
 					opener.openerHandler.create();
