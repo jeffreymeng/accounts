@@ -1,91 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 	<meta content="" name="description">
 	<meta content="" name="author">
-	<title>Jeffrey Accounts</title><!-- Bootstrap core CSS -->
+	<title>Jeffrey Accounts</title>
+	<!-- Bootstrap core CSS -->
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/social.css" rel="stylesheet">
 	<link href="/font-awesome/css/fontawesome-pro-core.css" rel="stylesheet">
 	<link href="/font-awesome/css/fontawesome-pro-brands.css" rel="stylesheet">
 	<style>
-	       body {
-	           background-color: #fcfcfc;
-	       }
+		body {
+			background-color: #fcfcfc;
+		}
 
-	       .body-box {
-	           position: absolute;
-	           margin: auto;
-	           top: 0;
-	           right: 0;
-	           bottom: 0;
-	           left: 0;
-	           width: 425px;
-	           height: 550px;
-	           background-color: #FBFAFA;
-	       }
+		.body-box {
+			position: absolute;
+			margin: auto;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 425px;
+			height: 550px;
+			background-color: #FBFAFA;
+		}
 
-	       /*invisible: Takes up space, dont see anything. hidden: takes up no space*/
+		/*invisible: Takes up space, dont see anything. hidden: takes up no space*/
 
-	       .invisible {
-	           visibility: hidden;
-	       }
+		.invisible {
+			visibility: hidden;
+		}
 
-	       .hidden {
-	           display: none;
-	       }
+		.hidden {
+			display: none;
+		}
 
-	       .btn-github .btn.google {
-	           color: white;
-	       }
+		.btn-github .btn.google {
+			color: white;
+		}
 
-	       #moible-box {
-	           display: none;
-	       }
+		#moible-box {
+			display: none;
+		}
 
-	       #body-box {
-	           display: block;
-	       }
+		#body-box {
+			display: block;
+		}
 
-	       @media screen and (max-width: 500px),
-	       screen and (max-height:625px) {
-	           #body-box {
-	               display: none;
-	           }
-	           #moible-box {
-	               padding-top: 20px;
-	               display: block;
-	           }
-	       }
+		@media screen and (max-width: 500px),
+		screen and (max-height:625px) {
+			#body-box {
+				display: none;
+			}
+			#moible-box {
+				padding-top: 20px;
+				display: block;
+			}
+		}
 
-	       /*FIX*/
+		/*FIX*/
 
-	       @media screen and (max-height:625px) and (min-width:600px) {
-	           #moible-box,
-	           #create-box {
-	               padding-left: 20%;
-	               padding-right: 20%;
-	           }
+		@media screen and (max-height:625px) and (min-width:600px) {
+			#moible-box,
+			#create-box {
+				padding-left: 20%;
+				padding-right: 20%;
+			}
 
-	       }
+		}
 
-	       #d-google-btn,
-	       #d-github-btn,
-	       #m-google-btn,
-	       #m-github-btn,
-	       #cancel,
-	       .cancel,
-	       #new-account-final {
-	           color: white;
-	       }
+		#d-google-btn,
+		#d-github-btn,
+		#m-google-btn,
+		#m-github-btn,
+		#cancel,
+		.cancel,
+		#new-account-final {
+			color: white;
+		}
 
-	       #create-box {
-	           padding-top: 75px;
-	       }
+		.text-white {
+			color: white;
+		}
+
+		#create-box {
+			padding-top: 75px;
+		}
 	</style>
 </head>
+
 <body>
 	<div class="card body-box li-container" id="body-box">
 		<h4 class="card-header">Login with Jeffrey Accounts</h4>
@@ -96,7 +103,7 @@
 			<hr>
 			<a class="btn btn-block btn-social btn-google" id="d-google-btn"><i class="fab fa-google"></i> Sign in with Google</a> <a class="btn btn-block btn-social btn-github" id="d-github-btn"><i class="fab fa-github"></i> Sign in with Github</a>
 			<hr>
-			<a class="cancel btn btn-danger form-control">Cancel and return to <span class="return-name">Techedit</span></a>
+			<a class=" btn btn-danger form-control cancel">Cancel and return to <span class="return-name">Techedit</span></a>
 			<hr>
 			<p><a class="create-account" href="">Create Account</a> | <a href="/account/create">Reset Password</a></p>
 		</div>
@@ -123,28 +130,30 @@
 		<hr>
 		<hr>
 		<a class="btn btn-danger form-control" id="cancel">Go back to login</a>
-	</div><!-- Bootstrap core JavaScript -->
+	</div>
+	<!-- Bootstrap core JavaScript -->
 	<script src="/js/jquery.min.js">
-	</script> 
+	</script>
 	<script>
-	       $(".cancel").click(function() {
-	           opener.openerHandler.cancelRequest();
-	       });
-	       $(".create-account").click(function() {
-	           $(".li-container").addClass("hidden");
-	           $("#create-box").removeClass("hidden");
-	           $("#new-account-final").click(function() {
-	               opener.openerHandler.create();
-	           });
-	       })
+		$(".cancel").click(function() {
+			opener.openerHandler.cancelRequest();
+		});
+		$(".create-account").click(function() {
+			$(".li-container").addClass("hidden");
+			$("#create-box").removeClass("hidden");
+			$("#new-account-final").click(function() {
+				opener.openerHandler.create();
+			});
+		})
 
-	       (function() {
-	           var handler = {};
-	           handler.redirect = function(url) {
-	               window.location.href = url;
-	           };
-	           window.popupHandler = handler;
-	       })();
+		(function() {
+			var handler = {};
+			handler.redirect = function(url) {
+				window.location.href = url;
+			};
+			window.popupHandler = handler;
+		})();
 	</script>
 </body>
+
 </html>
